@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Maelee Management LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700
+&display=swap" rel="stylesheet" />
+<style>
+:root {
+--maelee-blue: #00a4ff;
+--maelee-dark: #111111;
+--maelee-gray: #f4f5f7;
+--maelee-light-gray: #d2d4da;
+--maelee-white: #ffffff;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: "Montserrat", Arial, sans-serif;
+color: var(--maelee-dark);
+background: var(--maelee-gray);
+
+line-height: 1.6;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+/* Layout */
+
+header {
+background: var(--maelee-dark);
+color: var(--maelee-white);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.nav {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+padding: 0.75rem 1.5rem;
+}
+
+.nav-logo {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+
+.nav-logo img {
+height: 44px;
+width: auto;
+}
+
+.nav-logo-text {
+font-weight: 600;
+letter-spacing: 0.08em;
+font-size: 0.85rem;
+}
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+font-size: 0.9rem;
+}
+
+.nav-links a {
+position: relative;
+padding-bottom: 0.2rem;
+}
+
+.nav-links a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 0;
+height: 2px;
+background: var(--maelee-blue);
+transition: width 0.2s ease-out;
+}
+
+.nav-links a:hover::after {
+width: 100%;
+}
+
+/* Hero */
+
+.hero {
+background: radial-gradient(circle at top left, #1d2733 0, #050608 60%);
+color: var(--maelee-white);
+padding: 4.5rem 1.5rem 4rem;
+
+}
+
+.hero-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+gap: 3rem;
+align-items: center;
+}
+
+.hero-tag {
+text-transform: uppercase;
+letter-spacing: 0.22em;
+font-size: 0.75rem;
+color: var(--maelee-blue);
+margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+font-size: clamp(2.1rem, 3vw, 2.8rem);
+margin-bottom: 1rem;
+}
+
+.hero h1 span {
+color: var(--maelee-blue);
+}
+
+.hero-subtitle {
+font-size: 0.98rem;
+max-width: 32rem;
+color: #e1e4eb;
+margin-bottom: 1.75rem;
+}
+
+.hero-list {
+list-style: none;
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 0.75rem;
+margin-bottom: 2rem;
+font-size: 0.85rem;
+}
+
+.hero-list li {
+border-left: 3px solid var(--maelee-blue);
+padding-left: 0.5rem;
+color: #cfd3dd;
+}
+
+.hero-cta {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+
+align-items: center;
+}
+
+.btn-primary,
+.btn-secondary {
+border-radius: 999px;
+border: none;
+cursor: pointer;
+font-size: 0.85rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 0.8rem 1.6rem;
+font-weight: 600;
+}
+
+.btn-primary {
+background: var(--maelee-blue);
+color: var(--maelee-dark);
+}
+
+.btn-primary:hover {
+filter: brightness(1.08);
+}
+
+.btn-secondary {
+background: transparent;
+color: var(--maelee-white);
+
+border: 1px solid #555b67;
+}
+
+.hero-card {
+background: #050608;
+border-radius: 14px;
+border: 1px solid #262c37;
+padding: 1.5rem;
+box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+.hero-card-logo {
+display: flex;
+justify-content: center;
+margin-bottom: 1.2rem;
+}
+
+.hero-card img {
+height: 96px;
+width: auto;
+}
+
+.hero-card h3 {
+text-align: center;
+font-size: 0.95rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+
+margin-bottom: 0.5rem;
+color: #e8eaf0;
+}
+
+.hero-card p {
+font-size: 0.84rem;
+text-align: center;
+color: #b7bcc7;
+}
+
+/* Sections */
+
+main {
+background: var(--maelee-gray);
+}
+
+section {
+padding: 3.25rem 1.5rem;
+}
+
+.section-inner {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.section-label {
+text-transform: uppercase;
+
+letter-spacing: 0.2em;
+font-size: 0.7rem;
+color: var(--maelee-blue);
+margin-bottom: 0.4rem;
+}
+
+.section-title {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+.section-subtitle {
+font-size: 0.95rem;
+color: #444;
+margin-bottom: 1.75rem;
+max-width: 44rem;
+}
+
+/* About */
+
+.about-grid {
+display: grid;
+gap: 2.5rem;
+grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+align-items: start;
+}
+
+.about-card {
+background: var(--maelee-white);
+border-radius: 12px;
+border: 1px solid var(--maelee-light-gray);
+padding: 1.5rem 1.75rem;
+}
+
+.about-card h3 {
+font-size: 1rem;
+margin-bottom: 0.75rem;
+}
+
+.about-card p {
+font-size: 0.9rem;
+color: #444;
+margin-bottom: 0.6rem;
+}
+
+.about-pill-row {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+margin-top: 0.6rem;
+}
+
+.pill {
+font-size: 0.75rem;
+
+text-transform: uppercase;
+letter-spacing: 0.12em;
+border-radius: 999px;
+padding: 0.35rem 0.8rem;
+border: 1px solid var(--maelee-light-gray);
+background: #fbfbfc;
+}
+
+/* Services */
+
+.services-grid {
+display: grid;
+gap: 1.5rem;
+grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.service-card {
+background: var(--maelee-white);
+border-radius: 12px;
+border: 1px solid var(--maelee-light-gray);
+padding: 1.5rem 1.5rem 1.4rem;
+}
+
+.service-label {
+display: inline-block;
+font-size: 0.7rem;
+text-transform: uppercase;
+
+letter-spacing: 0.16em;
+color: var(--maelee-blue);
+margin-bottom: 0.5rem;
+}
+
+.service-card h3 {
+font-size: 1rem;
+margin-bottom: 0.5rem;
+}
+
+.service-card p {
+font-size: 0.88rem;
+color: #444;
+margin-bottom: 0.6rem;
+}
+
+.service-list {
+font-size: 0.84rem;
+margin-left: 1.2rem;
+}
+
+.service-list li {
+margin-bottom: 0.25rem;
+}
+
+/* Founder */
+
+.founder-section {
+background: var(--maelee-dark);
+color: var(--maelee-white);
+}
+
+.founder-grid {
+display: grid;
+gap: 2.5rem;
+grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+align-items: center;
+}
+
+.founder-photo-wrapper {
+max-width: 340px;
+border-radius: 16px;
+overflow: hidden;
+border: 3px solid var(--maelee-blue);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.founder-text h3 {
+font-size: 1.3rem;
+margin-bottom: 0.4rem;
+}
+
+.founder-role {
+font-size: 0.85rem;
+
+text-transform: uppercase;
+letter-spacing: 0.18em;
+color: var(--maelee-blue);
+margin-bottom: 0.9rem;
+}
+
+.founder-text p {
+font-size: 0.9rem;
+color: #dadee8;
+margin-bottom: 0.7rem;
+}
+
+.founder-quote {
+font-size: 0.9rem;
+font-style: italic;
+border-left: 3px solid var(--maelee-blue);
+padding-left: 0.75rem;
+margin-top: 0.5rem;
+color: #f5f7ff;
+}
+
+/* Contact */
+
+.contact-grid {
+display: grid;
+gap: 2.25rem;
+grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+
+}
+
+.contact-card {
+background: var(--maelee-white);
+border-radius: 12px;
+border: 1px solid var(--maelee-light-gray);
+padding: 1.75rem;
+font-size: 0.9rem;
+}
+
+.contact-card p {
+margin-bottom: 0.75rem;
+color: #444;
+}
+
+.contact-detail {
+margin-top: 0.75rem;
+}
+
+.contact-detail strong {
+display: inline-block;
+width: 70px;
+}
+
+form {
+display: grid;
+gap: 0.75rem;
+
+}
+
+label {
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.14em;
+color: #555;
+}
+
+input,
+textarea {
+width: 100%;
+padding: 0.6rem 0.7rem;
+border-radius: 6px;
+border: 1px solid var(--maelee-light-gray);
+font-family: inherit;
+font-size: 0.9rem;
+background: #fdfdfd;
+}
+
+textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+
+outline: 2px solid var(--maelee-blue);
+outline-offset: 1px;
+}
+
+/* Footer */
+
+footer {
+background: var(--maelee-dark);
+color: #b9bcc7;
+padding: 1.5rem;
+font-size: 0.8rem;
+}
+
+.footer-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 0.75rem;
+align-items: center;
+}
+
+.footer-inner span {
+opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+.hero-inner,
+.about-grid,
+.founder-grid,
+.contact-grid {
+grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-card {
+order: -1;
+margin-bottom: 1.5rem;
+}
+
+.nav-links {
+display: none;
+}
+}
+
+@media (max-width: 600px) {
+section {
+padding-inline: 1rem;
+}
+
+.hero {
+padding-inline: 1rem;
+}
+}
+
+</style>
+</head>
+<body>
+<!-- Header / Nav -->
+<header>
+<div class="nav">
+<div class="nav-logo">
+<!-- Replace src with your actual logo file -->
+<img src="/mnt/data/IMG_2250.jpeg" alt="Maelee Management LLC logo" />
+<div class="nav-logo-text">MAELEE MANAGEMENT LLC</div>
+</div>
+<nav class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Capabilities</a>
+<a href="#founder">Founder</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="hero-tag">Family-owned investment management</div>
+<h1>
+Proven strategies to
+
+<span>generate income</span> and build lasting wealth.
+</h1>
+<p class="hero-subtitle">
+Maelee Management LLC is a family owned investment management firm
+specializing in trading and real estate, combining disciplined research with real-world
+experience to help clients grow and protect capital.
+</p>
+<ul class="hero-list">
+<li>Public & options trading</li>
+<li>Income-focused real estate</li>
+<li>Risk-aware portfolio design</li>
+</ul>
+<div class="hero-cta">
+<a href="#contact"><button class="btn-primary">Schedule a
+Conversation</button></a>
+<a href="#services"><button class="btn-secondary">Explore Our Focus
+Areas</button></a>
+</div>
+</div>
+
+<aside class="hero-card" aria-label="Firm overview">
+<div class="hero-card-logo">
+<img src="/mnt/data/IMG_2250.jpeg" alt="Maelee Management LLC logo mark"
+/>
+</div>
+<h3>Maelee Management LLC</h3>
+<p>
+
+Built on a foundation of integrity and discipline, Maelee Management applies a
+rules-based, repeatable approach to uncovering opportunity in markets and real estate
+while keeping risk at the forefront.
+</p>
+</aside>
+</div>
+</section>
+
+<main>
+<!-- About -->
+<section id="about">
+<div class="section-inner">
+<div class="section-label">About the firm</div>
+<h2 class="section-title">Family values, institutional discipline.</h2>
+<p class="section-subtitle">
+Maelee Management LLC was founded to bridge two worlds: the trust and long-
+term perspective of a family business, and the rigor of professional investment
+management. Every decision begins with the core principles that shaped founder
+Anthony Mayo from childhood—integrity, discipline, and stewardship.
+</p>
+
+<div class="about-grid">
+<div>
+<div class="about-card">
+<h3>Our mission</h3>
+<p>
+To help individuals, families, and entrepreneurs convert income into durable
+wealth through focused exposure to trading strategies and real-estate backed assets.
+</p>
+
+<p>
+We believe that wealth is built intentionally—through a combination of
+consistent process, thoughtful risk management, and a commitment to learning in every
+market cycle.
+</p>
+</div>
+
+<div class="about-card" style="margin-top: 1.25rem;">
+<h3>How we serve clients</h3>
+<p>
+We partner with clients who value clarity and transparency. That means frank
+conversations about goals, time horizons, and risk tolerance—and straightforward
+reporting that connects strategy to results.
+</p>
+<div class="about-pill-row">
+<span class="pill">Transparent</span>
+<span class="pill">Data-driven</span>
+<span class="pill">Client-aligned</span>
+</div>
+</div>
+</div>
+
+<div>
+<div class="about-card">
+<h3>What makes Maelee different</h3>
+<p>
+As an independent, family-owned firm, we are free from the conflicts and
+complexity often found in larger institutions. We focus where we believe we have an
+edge—liquid markets and real estate—and we invest alongside our clients.
+
+</p>
+<p>
+That alignment keeps our attention on what matters most: preserving capital,
+generating income, and compounding returns over time.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services">
+<div class="section-inner">
+<div class="section-label">Capabilities</div>
+<h2 class="section-title">Focused expertise in trading & real estate.</h2>
+<p class="section-subtitle">
+Our work centers on a concise set of strategies where we can apply deep
+research, repeatable process, and decades of practical experience.
+</p>
+
+<div class="services-grid">
+<article class="service-card">
+<span class="service-label">Trading</span>
+<h3>Market & options strategies</h3>
+<p>
+Rules-based trading approaches designed to capture opportunity while
+managing downside risk through position sizing, diversification, and disciplined exits.
+
+</p>
+<ul class="service-list">
+<li>Equity & ETF strategies</li>
+<li>Income-oriented options</li>
+<li>Risk-management overlays</li>
+</ul>
+</article>
+
+<article class="service-card">
+<span class="service-label">Real Estate</span>
+<h3>Income-focused property exposure</h3>
+<p>
+Real estate investments aimed at creating stable cash flow and long-term
+appreciation, with a focus on fundamentals and local market insight.
+</p>
+<ul class="service-list">
+<li>Residential & multifamily</li>
+<li>Cash-flow and value-add projects</li>
+<li>Disciplined acquisition & exit criteria</li>
+</ul>
+</article>
+
+<article class="service-card">
+<span class="service-label">Advisory</span>
+<h3>Wealth & risk consultation</h3>
+<p>
+
+Strategic guidance to align portfolios, real estate holdings, and business
+interests with the goals of preserving capital, creating income, and building generational
+wealth.
+</p>
+<ul class="service-list">
+<li>Portfolio structure & review</li>
+<li>Income planning perspectives</li>
+<li>Wealth-building roadmaps</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Founder -->
+<section id="founder" class="founder-section">
+<div class="section-inner">
+<div class="section-label">Leadership</div>
+
+<div class="founder-grid">
+<div class="founder-photo-wrapper">
+<!-- Replace src with your final headshot file -->
+<img src="/mnt/data/IMG_2393.jpeg" alt="Anthony Mayo, Founder of Maelee
+Management LLC" />
+</div>
+
+<div class="founder-text">
+<h3>Anthony Mayo</h3>
+
+<div class="founder-role">Founder &amp; Owner, Maelee Management
+LLC</div>
+<p>
+Anthony Mayo established Maelee Management LLC after a career in
+technology and leadership, bringing institutional-grade discipline to a family-owned
+investment platform.
+</p>
+<p>
+Raised in a home where integrity was expected and discipline was modeled
+daily, Anthony’s parents instilled the values that now define the firm. Every strategy,
+trade, and property decision is measured against those standards.
+</p>
+<p class="founder-quote">
+“The markets will move and cycles will change—but integrity and discipline
+don’t. Those principles guide how we manage money and how we serve every family
+we work with.”
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="section-inner">
+<div class="section-label">Get started</div>
+<h2 class="section-title">Let’s talk about your next chapter.</h2>
+<p class="section-subtitle">
+
+Whether you’re looking to generate additional income, diversify into real estate, or
+create a roadmap toward generational wealth, Maelee Management LLC is ready to
+help you take the next step.
+</p>
+
+<div class="contact-grid">
+<div class="contact-card">
+<h3 style="margin-bottom: 0.75rem;">Connect with Maelee Management</h3>
+<p>
+Share a bit about your goals and we’ll follow up to schedule an introductory
+conversation. There’s no obligation—just a chance to explore whether our approach is
+the right fit for you and your family.
+</p>
+<div class="contact-detail">
+<p><strong>Email</strong> info@maeleemanagement.com</p>
+<p><strong>Phone</strong> (555) 555-5555</p>
+<p><strong>Location</strong> New York &amp; virtual client meetings</p>
+</div>
+</div>
+
+<div>
+<!-- Non-functional HTML form (wire up to your backend or form service) -->
+<form>
+<div>
+<label for="name">Name</label>
+<input id="name" type="text" placeholder="Your full name" />
+</div>
+<div>
+
+<label for="email">Email</label>
+<input id="email" type="email" placeholder="you@example.com" />
+</div>
+<div>
+<label for="topic">Area of interest</label>
+<input id="topic" type="text" placeholder="Trading, real estate, or both" />
+</div>
+<div>
+<label for="message">Message</label>
+<textarea id="message" placeholder="Tell us about your goals and
+timeline..."></textarea>
+</div>
+<button class="btn-primary" type="submit">Submit Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-inner">
+<span>© <span id="year"></span> Maelee Management LLC. All rights
+reserved.</span>
+<span>Built on integrity, discipline, and a commitment to family wealth.</span>
+</div>
+</footer>
+
+<script>
+// Set current year in footer
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
