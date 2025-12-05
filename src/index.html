@@ -10,7 +10,7 @@ href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;7
 <style>
 :root {
 --maelee-blue: #33b6ff;
---maelee-dark: #111111;
+--maelee-dark: #000000;
 --maelee-off-white: #f4f5f7;
 --maelee-light-gray: #a6a6a6;
 --maelee-white: #ffffff;
@@ -72,9 +72,10 @@ width: auto;
 }
 
 .nav-logo-text {
-font-weight: 600;
+font-family: 'logo-font', sans-serif;
 letter-spacing: 0.08em;
-font-size: 0.85rem;
+font-size: 1.6rem;
+color: var(--maelee-light-gray);
 }
 
 .nav-links {
@@ -197,7 +198,7 @@ border: 1px solid #555b67;
 }
 
 .hero-card {
-background: #050608;
+background: var(--maelee-dark);
 border-radius: 14px;
 border: 1px solid #262c37;
 padding: 1.5rem;
@@ -211,18 +212,20 @@ margin-bottom: 1.2rem;
 }
 
 .hero-card img {
-height: 96px;
+height: 150px;
 width: auto;
 }
 
 .hero-card h3 {
+font-family: 'logo-font', sans-serif;
 text-align: center;
-font-size: 0.95rem;
+font-size: 1.25rem;
+font-weight: 100;
 letter-spacing: 0.14em;
 text-transform: uppercase;
 
 margin-bottom: 0.5rem;
-color: #e8eaf0;
+color: var(--maelee-light-gray);
 }
 
 .hero-card p {
@@ -533,8 +536,7 @@ padding-inline: 1rem;
 <header>
 <div class="nav">
 <div class="nav-logo">
-<!-- Replace src with your actual logo file -->
-<img src="/mnt/data/IMG_2250.jpeg" alt="Maelee Management LLC logo" />
+<img src="assets/images/FullLogo_NoText.jpg" alt="Maelee Management LLC logo" />
 <div class="nav-logo-text">MAELEE MANAGEMENT LLC</div>
 </div>
 <nav class="nav-links">
@@ -576,10 +578,10 @@ Areas</button></a>
 
 <aside class="hero-card" aria-label="Firm overview">
 <div class="hero-card-logo">
-<img src="/mnt/data/IMG_2250.jpeg" alt="Maelee Management LLC logo mark"
+<img src="assets/images/FullLogo_NoBuffer.jpg" alt="Maelee Management LLC logo mark"
 />
 </div>
-<h3>Maelee Management LLC</h3>
+
 <p>
 
 Built on a foundation of integrity and discipline, Maelee Management applies a
@@ -719,8 +721,7 @@ wealth.
 
 <div class="founder-grid">
 <div class="founder-photo-wrapper">
-<!-- Replace src with your final headshot file -->
-<img src="/mnt/data/IMG_2393.jpeg" alt="Anthony Mayo, Founder of Maelee
+<img src="assets/images/Founder.jpg" alt="Anthony Mayo, Founder of Maelee
 Management LLC" />
 </div>
 
