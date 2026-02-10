@@ -437,9 +437,14 @@ color: #444;
 margin-top: 0.75rem;
 }
 
+.contact-detail span {
+margin-left: 5%;
+}
+
 .contact-detail strong {
 display: inline-block;
 width: 70px;
+color: var(--maelee-blue);
 }
 
 form {
@@ -483,7 +488,7 @@ outline-offset: 1px;
 footer {
 background: var(--maelee-dark);
 color: var(--maelee-light-gray);
-padding: 1.5rem;
+padding: 0.25rem;
 font-size: 0.8rem;
 }
 
@@ -774,6 +779,22 @@ create a roadmap toward generational wealth, Maelee Management LLC is ready to
 help you take the next step.
 </p>
 
+<!-- Temporary Contact Us Section -->
+<div class="contact-card" style="width: 60%;">
+<h3 style="margin-bottom: 0.75rem;">Connect with Maelee Management</h3>
+<p>
+Share a bit about your goals and we’ll follow up to schedule an introductory
+conversation. There’s no obligation—just a chance to explore whether our approach is
+the right fit for you and your family.
+</p>
+<div class="contact-detail">
+<p><strong>EMAIL</strong> <span>mayoaajj@gmail.com</span></p>
+<p><strong>PHONE</strong> <span>(551) 226-9734</span></p>
+<p><strong>LOCATION</strong> <span>New York & virtual client meetings</span></p>
+</div>
+</div>
+
+<!--  Contact Us Section w/ Non-functional HTML form, needs to be implemented
 <div class="contact-grid">
 <div class="contact-card">
 <h3 style="margin-bottom: 0.75rem;">Connect with Maelee Management</h3>
@@ -788,16 +809,14 @@ the right fit for you and your family.
 <p><strong>Location</strong> New York & virtual client meetings</p>
 </div>
 </div>
-
 <div>
-<!-- Non-functional HTML form (wire up to your backend or form service) -->
+
 <form>
 <div>
 <label for="name">Name</label>
 <input id="name" type="text" placeholder="Your full name" />
 </div>
 <div>
-
 <label for="email">Email</label>
 <input id="email" type="email" placeholder="you@example.com" />
 </div>
@@ -812,6 +831,8 @@ timeline..."></textarea>
 </div>
 <button class="btn-primary" type="submit">Submit Inquiry</button>
 </form>
+-->
+
 </div>
 </div>
 </div>
