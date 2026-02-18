@@ -416,8 +416,10 @@ color: #f5f7ff;
 .contact-grid {
 display: grid;
 gap: 2.25rem;
-grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-
+/* Styling for section with form
+grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); */
+/* TODO: Remove below styling when form functionality is implemented */
+grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
 }
 
 .contact-card {
@@ -779,22 +781,6 @@ create a roadmap toward generational wealth, Maelee Management LLC is ready to
 help you take the next step.
 </p>
 
-<!-- Temporary Contact Us Section -->
-<div class="contact-card" style="width: 60%;">
-<h3 style="margin-bottom: 0.75rem;">Connect with Maelee Management</h3>
-<p>
-Share a bit about your goals and we’ll follow up to schedule an introductory
-conversation. There’s no obligation—just a chance to explore whether our approach is
-the right fit for you and your family.
-</p>
-<div class="contact-detail">
-<p><strong>EMAIL</strong> <span>mayoaajj@gmail.com</span></p>
-<p><strong>PHONE</strong> <span>(551) 226-9734</span></p>
-<p><strong>LOCATION</strong> <span>New York & virtual client meetings</span></p>
-</div>
-</div>
-
-<!--  Contact Us Section w/ Non-functional HTML form, needs to be implemented
 <div class="contact-grid">
 <div class="contact-card">
 <h3 style="margin-bottom: 0.75rem;">Connect with Maelee Management</h3>
@@ -811,7 +797,8 @@ the right fit for you and your family.
 </div>
 <div>
 
-<form>
+<!--  Functionality of HTML form needs to be implemented -->
+<form style="visibility: hidden;">
 <div>
 <label for="name">Name</label>
 <input id="name" type="text" placeholder="Your full name" />
@@ -831,7 +818,6 @@ timeline..."></textarea>
 </div>
 <button class="btn-primary" type="submit">Submit Inquiry</button>
 </form>
--->
 
 </div>
 </div>
